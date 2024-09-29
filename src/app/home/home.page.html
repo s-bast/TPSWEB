@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <!-- Agregamos el logo centrado -->
+      <img src="assets/logo.png" alt="Logo" class="header-logo" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <!-- Centrar el buscador -->
+  <div style="display: flex; justify-content: center;">
+    <ion-searchbar placeholder="Búsqueda de materia" style="max-width: 80%;"></ion-searchbar>
+  </div>
+
+  <!-- Filtro de ordenación y cambio de vista -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    
+    <!-- Ordenar por desplegable (a la izquierda) -->
+    <ion-select [(ngModel)]="sortOption" placeholder="Ordenar por" interface="popover">
+      <ion-select-option value="most-searched">Más buscadas</ion-select-option>
+      <ion-select-option value="alphabetical">Alfabéticamente</ion-select-option>
+    </ion-select>
+    
+    <!-- Botón para alternar vista (a la derecha) -->
+    <ion-button class="toggle-view-button" (click)="toggleView()" fill="outline">
+      <ion-icon [name]="isSingleColumn ? 'grid-outline' : 'list-outline'" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Segmento con scroll horizontal -->
+  <ion-segment scrollable value="most-searched" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="first-year">
+      <ion-label>1er año</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="second-year">
+      <ion-label>2do año</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="third-year">
+      <ion-label>3er año</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="fourth-year">
+      <ion-label>4to año</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="most-searched">
+      <ion-label>Más buscadas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="less-searched">
+      <ion-label>Menos buscadas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Grid de materias -->
+  <ion-grid>
+    <ion-row *ngFor="let row of getRows()">
+      <ion-col *ngFor="let subject of row" [size]="isSingleColumn ? 12 : 4">
+        <ion-card button (click)="openSubject(subject)">
+          <img [src]="subject.image" />
+          <ion-card-content>{{ subject.name }}</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!-- Barra de navegación inferior -->
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="account">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+

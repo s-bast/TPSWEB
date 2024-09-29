@@ -1,0 +1,22 @@
+/* src/theme/variables.scss */
+
+/* Desactivar modo oscuro global */
+:root {
+    --ion-background-color: #ffffff;  /* Fondo blanco por defecto */
+    --ion-background-color-rgb: 255, 255, 255;
+  
+    /* Texto y fondo claro */
+    --ion-text-color: #000000;  /* Texto oscuro */
+    --ion-text-color-rgb: 0, 0, 0;
+  }
+  
+  /* Asegurarse de que el modo oscuro esté desactivado */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-background-color: #ffffff !important;
+      --ion-background-color-rgb: 255, 255, 255 !important;
+      --ion-text-color: #000000 !important;
+      --ion-text-color-rgb: 0, 0, 0 !important;
+    }
+  }
+  

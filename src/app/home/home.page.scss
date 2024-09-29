@@ -1,0 +1,105 @@
+/* Fondo blanco para todo el contenido */
+ion-content {
+  --background: #ffffff !important; /* Fondo blanco para todo el contenido */
+}
+
+/* Estilo del ion-select (botón desplegable de ordenar) */
+ion-select {
+  width: 180px; /* Definir un ancho más pequeño para el botón desplegable */
+  padding: 5px; /* Reducir el padding interno */
+  border: none; /* Contorno transparente */
+  background-color: transparent; /* Fondo transparente */
+  font-size: 14px; /* Tamaño de texto más pequeño */
+}
+
+/* Estilo del texto dentro del ion-select */
+ion-select::part(text) {
+  color: #6a1b9a !important; /* Texto violeta */
+  font-weight: bold; /* Hacer el texto un poco más grueso */
+}
+
+/* Estilo del texto dentro del desplegable (opciones del ion-select) */
+ion-select-option {
+  color: #6a1b9a !important; /* Asegurar que las opciones también sean violetas */
+}
+
+/* Estilo para centrar y ajustar el tamaño del logo */
+.header-logo {
+  height: 120px; /* Ajustar la altura del logo */
+  max-width: 100%; /* Asegurar que el logo no se extienda más allá del contorno */
+}
+
+/* Fondo blanco para el toolbar */
+ion-toolbar {
+  --background: #ffffff;
+}
+
+/* Fondo blanco para el ion-footer también */
+ion-footer {
+  --background: #ffffff;
+  border-top: 1px solid #e0e0e0; /* Borde superior claro */
+}
+
+/* Estilo para las tarjetas (ion-card) */
+ion-card {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 200px; /* Establecer un alto fijo para las imágenes dentro del ion-card */
+    object-fit: cover; /* Recortar las imágenes manteniendo la proporción */
+    border-radius: 10px; /* Bordes redondeados en las imágenes */
+  }
+
+  ion-card-content {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333; /* Texto oscuro para mejor legibilidad */
+  }
+}
+
+/* Estilo del ion-segment-button para la selección */
+ion-segment-button {
+  --color-checked: #6a1b9a; /* Color púrpura cuando se selecciona */
+}
+
+/* Fondo blanco para la barra de navegación inferior */
+ion-tab-bar {
+  --background: #ffffff;
+
+  ion-tab-button {
+    --color-selected: #6a1b9a; /* Color púrpura seleccionado */
+  }
+}
+
+/* Centrar el buscador */
+ion-searchbar {
+  max-width: 80%;
+  margin: 0 auto; /* Centrar el buscador horizontalmente */
+}
+
+/* Alinear el select y el botón de vista correctamente */
+ion-select {
+  margin-right: auto; /* Alinear el select a la izquierda */
+}
+
+/* Estilo del botón para alternar entre filas de uno o tres */
+ion-button.toggle-view-button {
+  margin-left: auto; /* Alinear el botón a la derecha */
+  border: 1px solid #6a1b9a; /* Solo borde violeta */
+  background-color: transparent; /* Fondo transparente */
+  color: #6a1b9a; /* Íconos en color violeta */
+}
+
+/* Remover el texto del botón de vista (solo íconos) */
+ion-button.toggle-view-button ion-label {
+  display: none; /* Ocultar el texto (label) */
+}
+
+ion-button.toggle-view-button ion-icon {
+  font-size: 24px; /* Tamaño de ícono más grande */
+}
+
